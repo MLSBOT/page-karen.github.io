@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Karen 💝</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="emoji-bg" id="emojiBg"></div>
+  <div class="bg-noise"></div>
+  <div class="watermark">Miguel-Afk 💝</div>
+
+  <!-- INICIO -->
+  <section class="screen active" id="screen-inicio">
+    <div class="inicio-content">
+      <p class="pre-title">Para</p>
+      <h1 class="nombre" id="nombreElla">MI AMOR</h1>
+      <p class="subtitulo">Muchos recuerdos que solo nosotros sabemos.</p>
+      <button class="btn-main" id="btnEmpezar">Empezar??</button>
+    </div>
+  </section>
+
+  <!-- JUEGO -->
+  <section class="screen" id="screen-juego">
+    <header class="top-bar">
+      <div>
+        <p class="top-text">Recuerdos desbloqueados: <span id="contadorRecuerdos">0</span>/<span
+            id="totalRecuerdos">0</span></p>
+      </div>
+      <button class="btn-ghost" id="btnVerRecuerdos">Ver que desblolqueaste</button>
+    </header>
+    <div class="juego-content">
+      <h2 class="titulo-seccion" id="tituloJuego">Primero</h2>
+      <p class="descripcion-juego" id="descJuego">Encuentra los corazones para desbloquearlos</p>
+
+      <!-- JUEGO 1: CORAZONES -->
+      <div class="juego-panel" id="juego-corazones">
+        <div class="corazones-grid" id="corazonesGrid"></div>
+        <p class="pista">Encuentre todos los corazones escondidos</p>
+      </div>
+
+      <!-- JUEGO 2: MEMORIA -->
+      <div class="juego-panel" id="juego-memoria">
+        <div class="memoria-grid" id="memoriaGrid"></div>
+        <p class="pista">Encuentra las parejas iguales 😅</p>
+      </div>
+
+      <!-- JUEGO 3: CLICK -->
+      <div class="juego-panel" id="juego-click">
+        <p class="pista">Dele click al corazón hasta que se llene la barra JAJAJ</p>
+        <div class="click-area">
+          <button class="heart-btn" id="heartBtn">💝</button>
+          <div class="barra-amor">
+            <div class="barra-amor-fill" id="barraAmor"></div>
+          </div>
+          <p class="click-count"><span id="clickCount">0</span> / <span id="clickTarget">25</span></p>
+        </div>
+      </div>
+
+      <!-- JUEGO 4: ATRAPA CORAZONES -->
+      <div class="juego-panel" id="juego-atrapa">
+        <p class="pista">Atrapa solo los corazones buenos</p>
+        <div class="atrapa-area" id="atrapaArea"></div>
+        <p class="click-count">llevas: <span id="atrapaCount">0</span> / <span id="atrapaTarget">8</span></p>
+      </div>
+
+      <!-- JUEGO 5: CORAZÓN MÁGICO -->
+      <div class="juego-panel" id="juego-pregunta">
+        <p class="pista">Sigue el corazón correcto entre los que se mueven, facil no?</p>
+        <div class="corazon-magico-area" id="corazonMagicoArea"></div>
+        <p class="click-count">Aciertos: <span id="magicoAciertos">0</span> / 3</p>
+      </div>
+
+      <button class="btn-main hidden" id="btnSiguienteRecuerdo">Desbloquear siguiente recuerdo</button>
+    </div>
+  </section>
+
+  <!-- RECUERDO DESBLOQUEADO -->
+  <section class="screen" id="screen-recuerdo">
+    <div class="recuerdo-card">
+      <span class="etiqueta">Este recuerdo 💝</span>
+      <h2 class="recuerdo-titulo" id="recuerdoTitulo"></h2>
+      <div class="recuerdo-media">
+        <img id="recuerdoImg" src="" alt="Recuerdo" class="recuerdo-img hidden">
+        <video id="recuerdoVideo" class="recuerdo-video hidden" autoplay muted playsinline loop></video>
+        <div class="recuerdo-audio hidden" id="recuerdoAudioWrap">
+          <p class="audio-text">Esta canción jajaj, cuanto tiempo, no?...</p>
+          <audio id="recuerdoAudio" controls></audio>
+        </div>
+      </div>
+      <p class="recuerdo-texto" id="recuerdoTexto"></p>
+      <div class="recuerdo-actions">
+        <button class="btn-main" id="btnSeguirJugando">Siguiente</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA DE RECUERDOS -->
+  <section class="screen" id="screen-galeria">
+    <header class="top-bar">
+      <h2 class="titulo-seccion"> Recuerdos</h2>
+      <button class="btn-ghost" id="btnVolverJuego">Volver</button>
+    </header>
+    <div class="galeria-grid" id="galeriaGrid"></div>
+  </section>
+
+  <!-- CARTA -->
+  <section class="screen" id="screen-carta">
+    <div class="carta-wrapper">
+      <div class="carta-sobre">
+        <div class="carta-papel">
+          <span class="carta-fecha">Para ti, con todo mi amor</span>
+          <h2 class="carta-titulo">Mi cartita jsjs</h2>
+          <div class="carta-contenido" id="cartaContenido"></div>
+          <p class="carta-firma" id="cartaFirma"></p>
+        </div>
+      </div>
+      <button class="btn-main hidden" id="btnIrFinal">Ir al final</button>
+    </div>
+  </section>
+
+  <!-- COLLAGE DE TRANSICIÓN -->
+  <section class="screen" id="screen-collage-final">
+    <div class="transicion-collage" id="transicionCollage"></div>
+    <div class="transicion-overlay"></div>
+    <div class="transicion-content">
+      <h2 class="transicion-titulo">Nuestros momentos</h2>
+    </div>
+    <button class="btn-flecha" id="btnBajarRamo" type="button" aria-label="siguiente">
+      <span class="flecha">↓</span>
+    </button>
+  </section>
+
+  <!-- RAMO DE GIRASOLES -->
+  <section class="screen" id="screen-ramo">
+    <div class="ramo-fondo"></div>
+    <div class="ramo-contenido">
+      <div class="ramo-wrap" id="ramoWrap"></div>
+      <p class="ramo-frase">Para ti, con todo mi amor</p>
+      <button class="btn-main" id="btnIrContador">Ver nuestro tiempo</button>
+    </div>
+  </section>
+
+  <!-- CONTADOR FINAL -->
+  <section class="screen" id="screen-final">
+    <div class="collage-bg" id="collageBg"></div>
+    <div class="final-overlay"></div>
+    <div class="final-content">
+      <p class="final-pre">Nuestro tiempo</p>
+      <div class="contador-dias">
+        <span class="contador-numero" id="diasJuntos">0</span>
+        <span class="contador-texto">días juntos</span>
+      </div>
+      <p class="final-mensaje">Para ti, con todo mi amor</p>
+      <p class="final-nombre" id="finalNombreElla"></p>
+      <button class="btn-main" id="btnReiniciar" type="button">Volver al inicio</button>
+    </div>
+  </section>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
